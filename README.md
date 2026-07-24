@@ -19,6 +19,25 @@ The ```wcrypt2.pas``` unit provides Delphi header definitions for the classic Mi
 
 </br>
 
+This option is intended for applications that are using ephemeral keys, or applications that do not require access to persisted private keys, such as applications that perform only hashing, encryption, and digital signature verification. Only applications that create signatures or decrypt messages need access to a private key. In most cases, this flag should be set.
+
+</br>
+
+```pascal
+CryptAcquireContext (@hStore, PWideChar(citac.ReaderId), PWideChar(citac.CardId), PROV_RSA_FULL, CRYPT_VERIFYCONTEXT);//CRYPT_VERIFYCONTEXT) ;
+```
+
+</br>
+
+For file-based CSPs, when this flag is set, the pszContainer parameter must be set to NULL. The application has no access to the persisted private keys of public/private key pairs. When this flag is set, temporary public/private key pairs can be created, but they are not persisted.
+
+For hardware-based CSPs, such as a smart card CSP, if the pszContainer parameter is NULL or blank, this flag implies that no access to any keys is required, and that no UI should be presented to the user. This form is used to connect to the CSP to query its capabilities but not to actually use its keys. If the pszContainer parameter is not NULL and not blank, then this flag implies that access to only the publicly available information within the specified container is required. The CSP should not ask for a PIN. Attempts to access private information (for example, the CryptSignHash function) will fail.
+
+When CryptAcquireContext is called, many CSPs require input from the owning user before granting access to the private keys in the key container. For example, the private keys can be encrypted, requiring a password from the user before they can be used. However, if the CRYPT_VERIFYCONTEXT flag is specified, access to the private keys is not required and the user interface can be bypassed.
+
+
+It's operation not a check sign and need private key.
+
 ```
 //+---------------------------------------------------------------------------
 //

@@ -61,5 +61,5 @@ When you use the wcrypt2 translation unit in Delphi, you invoke standard Windows
 | :----------- | :----------- | :----------- |
 | ```PROV_RSA_FULL```     | [RSA](https://en.wikipedia.org/wiki/RSA_Security) software-based provider     | General public/private key encryption and signature tasks.     |
 | ```PROV_RSA_AES```     | Enhanced [RSA](https://en.wikipedia.org/wiki/RSA_Security) and AES provider     | High-security symmetric [AES encryption](https://simple.wikipedia.org/wiki/Advanced_Encryption_Standard) paired with asymmetric RSA.     |
-| ```PROV_DSS```     | Digital Signature Standard     | Specific to implementations utilizing DSA and [SHA-1](https://en.wikipedia.org/wiki/SHA-1) hashing.     |
+| ```PROV_DSS```     | Digital Signature Standard     | Specific to implementations utilizing [DSA](https://en.wikipedia.org/wiki/Hash_table) and [SHA-1](https://en.wikipedia.org/wiki/SHA-1) hashing.     |
 | Smart Card Providers     | Vendor-specific minidrivers     | Interfacing with physical smart cards, hardware tokens, or e-ID devices.     |

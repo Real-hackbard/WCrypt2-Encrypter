@@ -1,4 +1,4 @@
-# WCrypt2-File-Crypter:
+# :computer: WCrypt2 Encrypter
 
 </br>
 

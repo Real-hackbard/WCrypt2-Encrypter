@@ -1,4 +1,4 @@
-<img width="120" height="20" alt="WCrypt2-Encrypter" src="https://github.com/user-attachments/assets/55890868-d60d-41fc-a7e3-d0921c7de1c0" /># :computer: WCrypt2 Encrypter
+# :computer: WCrypt2 Encrypter
 
 </br>
 

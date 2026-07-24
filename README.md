@@ -47,6 +47,18 @@ In the context of Windows-based software development (especially using Delphi or
 
 ### Core Relationship
 When you use the wcrypt2 translation unit in Delphi, you invoke standard Windows CryptoAPI functions. These functions must target a CSP to perform any heavy lifting:
+
 * 1.**Initialization:** You use CryptAcquireContext to load a specific CSP into your application memory and acquire a handle to a specific key container.
-* 2.Execution: Functions like CryptGenKey, CryptEncrypt, or CryptSignHash route your data to the loaded CSP.
-* 3.Hardware vs. Software: The CSP can either be a standard Microsoft software provider (like the Microsoft Enhanced Cryptographic Provider) or a hardware-bound provider supplied by a vendor (such as a Smart Card reader minidriver or a hardware security module).
+
+* 2.**Execution:** Functions like CryptGenKey, CryptEncrypt, or CryptSignHash route your data to the loaded CSP.
+
+* 3.**Hardware vs. Software:** The CSP can either be a standard Microsoft software provider (like the Microsoft Enhanced Cryptographic Provider) or a hardware-bound provider supplied by a vendor (such as a Smart Card reader minidriver or a hardware security module).
+
+### Common CSP Types Used with wcrypt2
+
+</br>
+
+| CSP Constant / Provider Name | Description | Common Use Case |
+| :----------- | :----------- | :----------- |
+| ```PROV_RSA_FULL```     | RSA software-based provider     | General public/private key encryption and signature tasks.     |
+| ```PROV_RSA_AES```     | Enhanced RSA and AES provider     | High-security symmetric AES encryption paired with asymmetric RSA.     |

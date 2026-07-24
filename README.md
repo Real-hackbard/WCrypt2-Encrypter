@@ -53,9 +53,9 @@ When you use the wcrypt2 translation unit in Delphi, you invoke standard Windows
 
 * 3.**Hardware vs. Software:** The CSP can either be a standard Microsoft software provider (like the Microsoft Enhanced Cryptographic Provider) or a hardware-bound provider supplied by a vendor (such as a Smart Card reader minidriver or a hardware security module).
 
-### Common CSP Types Used with wcrypt2
-
 </br>
+
+### Common CSP Types Used with wcrypt2:
 
 | CSP Constant / Provider Name | Description | Common Use Case |
 | :----------- | :----------- | :----------- |

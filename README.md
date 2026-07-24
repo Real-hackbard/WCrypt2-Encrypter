@@ -10,7 +10,7 @@
 ![License](https://github.com/user-attachments/assets/ff71a38b-8813-4a79-8774-09a2f3893b48) ![Freeware](https://github.com/user-attachments/assets/1fea2bbf-b296-4152-badd-e1cdae115c43)
 
 </br>
-</br>
+
 
 The ```wcrypt2.pas``` unit provides Delphi header definitions for the classic Microsoft CryptoAPI (CAPI) functions. These interfaces are used to interact with Cryptographic Service Providers (CSPs), manage certificates, and perform cryptographic operations such as signing, encryption, or hashing.
 
@@ -18,6 +18,7 @@ The ```wcrypt2.pas``` unit provides Delphi header definitions for the classic Mi
 
 <img src="https://github.com/user-attachments/assets/a52ce961-6cfb-414c-9feb-6ea2c581e6e0" />
 
+</br>
 </br>
 
 This option is intended for applications that are using ephemeral keys, or applications that do not require access to persisted private keys, such as applications that perform only hashing, encryption, and digital signature verification. Only applications that create signatures or decrypt messages need access to a private key. In most cases, this flag should be set.

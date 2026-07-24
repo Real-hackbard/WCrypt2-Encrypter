@@ -94,3 +94,8 @@ begin
   end;
 end;
 ```
+
+</br>
+
+# Modern Status Note
+Microsoft's original CryptoAPI (represented by wincrypt.h / wcrypt2.pas) is an older legacy architecture. In newer application development environments, Microsoft strongly suggests leveraging the newer Cryptography API: Next Generation (CNG). [CNG substitutes Cryptographic Service Providers](https://learn.microsoft.com/en-us/windows/win32/seccng/cng-portal) (CSPs) with Key Storage Providers (KSPs) and offers support for modern elliptic curve algorithms.

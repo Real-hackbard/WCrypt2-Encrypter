@@ -10,6 +10,7 @@
 ![License](https://github.com/user-attachments/assets/ff71a38b-8813-4a79-8774-09a2f3893b48) ![Freeware](https://github.com/user-attachments/assets/1fea2bbf-b296-4152-badd-e1cdae115c43)
 
 </br>
+</br>
 
 The ```wcrypt2.pas``` unit provides Delphi header definitions for the classic Microsoft CryptoAPI (CAPI) functions. These interfaces are used to interact with Cryptographic Service Providers (CSPs), manage certificates, and perform cryptographic operations such as signing, encryption, or hashing.
 

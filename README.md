@@ -63,3 +63,34 @@ When you use the wcrypt2 translation unit in Delphi, you invoke standard Windows
 | ```PROV_RSA_AES```     | Enhanced [RSA](https://en.wikipedia.org/wiki/RSA_Security) and AES provider     | High-security symmetric [AES encryption](https://simple.wikipedia.org/wiki/Advanced_Encryption_Standard) paired with asymmetric RSA.     |
 | ```PROV_DSS```     | Digital Signature Standard     | Specific to implementations utilizing [DSA](https://en.wikipedia.org/wiki/Hash_table) and [SHA-1](https://en.wikipedia.org/wiki/SHA-1) hashing.     |
 | Smart Card Providers     | Vendor-specific minidrivers     | Interfacing with physical smart cards, hardware tokens, or e-ID devices.     |
+
+</br>
+
+When configuring a context using wcrypt2, your code generally looks like this:
+
+### :speech_balloon: Code example
+
+```pascal
+uses
+  Windows, wcrypt2;
+
+var
+  hProv: HCRYPTPROV;
+begin
+  // Acquiring a handle to the standard Microsoft RSA CSP
+  if CryptAcquireContext(
+       @hProv, 
+       nil,                       // nil utilizes the default user container
+       MS_DEF_PROV,               // Predefined Microsoft CSP name string
+       PROV_RSA_FULL,             // Provider type constant from wcrypt2
+       CRYPT_VERIFYCONTEXT        // Flag used if private keys aren't being permanently saved
+     ) then
+  begin
+    try
+      // Cryptographic operations (e.g., CryptGenRandom, CryptEncrypt) go here
+    finally
+      CryptReleaseContext(hProv, 0);
+    end;
+  end;
+end;
+```

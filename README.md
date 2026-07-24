@@ -40,15 +40,4 @@ When CryptAcquireContext is called, many CSPs require input from the owning user
 
 It's operation not a check sign and need private key.
 
-```
-//+---------------------------------------------------------------------------
-//
-//  Microsoft Windows
-//  Copyright (C) Microsoft Corporation, 1992 - 1997.
-//
-//  File:       wincrypt.h
-//
-//  Contents:   Cryptographic API Prototypes and Definitions
-//
-//----------------------------------------------------------------------------
-```
+

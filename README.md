@@ -40,4 +40,13 @@ When ```CryptAcquireContext``` is called, many CSPs require input from the ownin
 
 It's operation not a check sign and need private key.
 
+</br>
 
+# CSP (Cryptographic Service Provider)
+In the context of Windows-based software development (especially using Delphi or Free Pascal), wcrypt2.pas is a widely recognized Pascal translation header for Microsoft's CryptoAPI (wincrypt.h), which is used to interact directly with a Cryptographic Service Provider (CSP).A CSP is the underlying hardware or software module that executes actual cryptographic operations—such as hashing, encryption, digital signing, and key generation.
+
+### Core Relationship
+When you use the wcrypt2 translation unit in Delphi, you invoke standard Windows CryptoAPI functions. These functions must target a CSP to perform any heavy lifting:
+* 1.**Initialization:** You use CryptAcquireContext to load a specific CSP into your application memory and acquire a handle to a specific key container.
+* 2.Execution: Functions like CryptGenKey, CryptEncrypt, or CryptSignHash route your data to the loaded CSP.
+* 3.Hardware vs. Software: The CSP can either be a standard Microsoft software provider (like the Microsoft Enhanced Cryptographic Provider) or a hardware-bound provider supplied by a vendor (such as a Smart Card reader minidriver or a hardware security module).
